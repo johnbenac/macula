@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "kind": "ourbox-apps-collection",
+  "collection_id": "macula",
+  "display_name": "Macula Apps Publisher",
+  "apps": [
+    {
+      "app_id": "macula-api",
+      "display_name": "Macula API",
+      "source_path": "apps/macula-api",
+      "image_repo": "ghcr.io/johnbenac/macula/macula-api",
+      "default_tag": "latest"
+    },
+    {
+      "app_id": "macula-ui",
+      "display_name": "Macula UI",
+      "source_path": "apps/macula-ui",
+      "image_repo": "ghcr.io/johnbenac/macula/macula-ui",
+      "default_tag": "latest"
+    }
+  ],
+  "notes": "Portable Macula application images for OurBox deployment and catalog integration."
+}

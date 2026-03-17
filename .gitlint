@@ -1,0 +1,12 @@
+[general]
+ignore=merge-commits
+contrib=contrib-title-conventional-commits
+
+[title-max-length]
+line-length=100
+
+[body-max-line-length]
+line-length=100
+
+[contrib-title-conventional-commits]
+types=feat,fix,perf,refactor,docs,chore,test,build,ci,style,revert

@@ -1,0 +1,38 @@
+:80 {
+	root * /srv/site
+	encode gzip zstd
+
+	handle /health {
+		respond "OK" 200
+	}
+
+	route {
+		handle_path /api/* {
+			rewrite * /hosting/api{path}
+			reverse_proxy http://macula-api:3000
+		}
+
+		handle /hosting/api/* {
+			reverse_proxy http://macula-api:3000
+		}
+
+		handle /hosting/withIpfs/* {
+			reverse_proxy http://macula-api:3000
+		}
+
+		handle /hosting/withSubdomain/* {
+			reverse_proxy http://macula-api:3000
+		}
+
+		handle /ipfs/* {
+			reverse_proxy http://macula-api:3000
+		}
+
+		handle /ipfs_api/* {
+			reverse_proxy http://macula-api:3000
+		}
+
+		try_files {path} {path}/ /index.html
+		file_server
+	}
+}
